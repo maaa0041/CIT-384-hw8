@@ -1,0 +1,130 @@
+/* HW6 Color Palette
+   Deep Crimson:    #931621
+   Dark Slate Grey: #28464B
+   Stormy Teal:     #326771
+   Pacific Cyan:    #2C8C99
+   Turquoise:       #42D9C8
+*/
+
+/* Global box model fix */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background-color: #edf5f5;
+    color: #28464B;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Reusable wrapper: keeps content aligned in each colored section */
+.content-wrap {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden; /* Contains floated columns */
+}
+
+h1, h2, h3 { font-family: "Montserrat", Arial, sans-serif; line-height: 1.3; }
+h1 { font-size: 2.7rem; font-weight: 700; }
+h2 { font-size: 1.65rem; font-weight: 700; margin-top: 0; }
+h3 { font-size: 1.15rem; font-weight: 600; margin: 0 0 5px; }
+p { margin: 8px 0; }
+ul { margin-top: 10px; padding-left: 24px; }
+li { margin-bottom: 8px; }
+
+/* Two reusable floated columns; widths add up to 100% */
+.column-narrow { width: 30%; float: left; padding-right: 3%; min-height: 175px; }
+.column-wide { width: 70%; float: left; min-height: 225px; }
+
+/* Header and circular profile image */
+header { background-color: #28464B; color: #ffffff;}
+header h1, header h2 { margin: 0; }
+header h2 { color: #42D9C8; font-size: 1.3rem; font-weight: 500; }
+header a, footer a { color: #42D9C8; }
+.profile-img { border-radius: 50%; height: auto; }
+
+/* Each section spans the viewport; content stays centered */
+main section h2 { border-bottom: 2px solid currentColor; padding-bottom: 12px; }
+.skills { background-color: #ffffff; }
+.skills h2 { color: #931621; }
+.projects { background-color: #d9f6f1; }
+.projects h2 { color: #28464B; }
+.experience { background-color: #326771; color: #ffffff; }
+.experience h3 { color: #42D9C8; }
+.education { background-color: #ffffff; }
+.education h2 { color: #326771; }
+
+/* Clear the floats between work experience entries */
+.job-entry { display: flow-root; margin-bottom: 25px; }
+.job-entry:last-child { margin-bottom: 0; }
+.job-entry .column-wide ul { margin-top: 0; }
+
+/* Footer contact links */
+footer { background-color: #28464B; color: #ffffff; text-align: center; border-top: 6px solid #931621; }
+footer a { font-weight: 600; }
+.contact-info a { padding: 10px; display: inline-block; }
+a:hover { text-decoration: none; }
+a:focus-visible { outline: 3px solid #42D9C8; outline-offset: 3px; }
+
+/* Prevent the floated columns from getting cramped on narrow screens */
+@media (max-width: 650px) {
+    .content-wrap { padding: 30px 20px; }
+    .column-narrow, .column-wide { float: none; width: 100%; min-height: 0; padding-right: 0; }
+    .profile-img { max-width: 220px; display: block; margin: 0 auto 20px; }
+    header { text-align: center; }
+    h1 { font-size: 2rem; }
+    .job-entry .column-wide { margin-top: 12px; }
+}
+
+
+/* HW8: Navigation links stay visible while scrolling (no list markup). */
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3px;
+    padding: 8px 15px;
+    background-color: #28464B;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+.site-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 9px 12px;
+}
+.site-nav a:hover, .site-nav a:focus-visible {
+    background-color: #326771;
+    color: #42D9C8;
+}
+.site-nav .resume-download {
+    background-color: #931621;
+    border-radius: 4px;
+}
+.site-nav .resume-download:hover { background-color: #2C8C99; color: #ffffff; }
+
+/* HW8: Background photo/artwork with a semi-transparent RGBA gradient overlay. */
+.workexperience {
+    background-image:
+        linear-gradient(rgba(217, 246, 241, 0.90), rgba(217, 246, 241, 0.50)),
+        url('../images/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* HW8: Space between the footer icons and their labels. */
+.contact-info i { margin-right: 6px; }
+
+@media (max-width: 650px) {
+    .site-nav { padding: 6px; }
+    .site-nav a { padding: 7px 8px; font-size: 0.85rem; }
+    html { scroll-padding-top: 125px; }
+}
