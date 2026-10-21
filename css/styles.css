@@ -118,6 +118,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
         linear-gradient(rgba(217, 246, 241, 0.90), rgba(217, 246, 241, 0.50)),
         url('../images/background.jpeg');
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
 }
