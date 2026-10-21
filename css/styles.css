@@ -45,7 +45,7 @@ header { background-color: #28464B; color: #ffffff;}
 header h1, header h2 { margin: 0; }
 header h2 { color: #42D9C8; font-size: 1.3rem; font-weight: 500; }
 header a, footer a { color: #42D9C8; }
-.profile-img { border-radius: 50%; height: 400px; width: 400px; }
+.profile-img { border-radius: 50%; height: 200px; width: 200px; }
 
 /* Each section spans the viewport; content stays centered */
 main section h2 { border-bottom: 2px solid currentColor; padding-bottom: 12px; }
